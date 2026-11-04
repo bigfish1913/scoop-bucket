@@ -1,0 +1,38 @@
+{
+  "version": "0.1.2",
+  "description": "Cargo wrapper with managed intermediate caches and safe disk-pressure cleanup",
+  "homepage": "https://github.com/bigfish1913/cargoc",
+  "license": "MIT",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/bigfish1913/cargoc/releases/download/v0.1.2/cargoc-v0.1.2-x86_64-pc-windows-msvc.zip",
+      "hash": "f1db7ebe759bbad170fd7673ad6b63ebaecbad88626033288cdfc8f54f0caa5d",
+      "extract_dir": "cargoc-v0.1.2-x86_64-pc-windows-msvc"
+    },
+    "arm64": {
+      "url": "https://github.com/bigfish1913/cargoc/releases/download/v0.1.2/cargoc-v0.1.2-aarch64-pc-windows-msvc.zip",
+      "hash": "ce27e97a53554b6f73ffee11cf27887990f2abd5a69c603eb309f8ec2f2752e5",
+      "extract_dir": "cargoc-v0.1.2-aarch64-pc-windows-msvc"
+    }
+  },
+  "bin": "cargoc.exe",
+  "checkver": {
+    "github": "https://github.com/bigfish1913/cargoc"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/bigfish1913/cargoc/releases/download/v$version/cargoc-v$version-x86_64-pc-windows-msvc.zip",
+        "extract_dir": "cargoc-v$version-x86_64-pc-windows-msvc"
+      },
+      "arm64": {
+        "url": "https://github.com/bigfish1913/cargoc/releases/download/v$version/cargoc-v$version-aarch64-pc-windows-msvc.zip",
+        "extract_dir": "cargoc-v$version-aarch64-pc-windows-msvc"
+      }
+    },
+    "hash": {
+      "url": "$url.sha256",
+      "regex": "^([a-fA-F0-9]{64})"
+    }
+  }
+}
